@@ -1,0 +1,25 @@
+{
+  "name": "Project Genesis — L’Evoluzione",
+  "short_name": "GENESIS",
+  "description": "Simulatore di mondi viventi, ecosistemi e selezione naturale. Funziona offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#08131b",
+  "theme_color": "#08131b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

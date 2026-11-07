@@ -7,11 +7,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="GENESIS">
-  <meta name="description" content="Genesis: un mondo procedurale vivo, da esplorare e osservare dal tuo iPhone.">
+  <meta name="description" content="Genesis 0.4: ecosistema, creature, genomi ereditari, mutazioni ed evoluzione naturale su iPhone.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon-180.png">
-  <title>GENESIS — Il mondo nasce</title>
+  <title>GENESIS — L’Evoluzione</title>
   <style>
     :root{color-scheme:dark;--bg:#08131b;--surface:#10222b;--surface2:#172e37;--stroke:#29434b;--text:#f2f4e9;--muted:#91aaae;--mint:#adf0c0;--aqua:#89e3d4;--gold:#e7c78e;--danger:#f79e8d}
     *{box-sizing:border-box} html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--text);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
@@ -26,6 +26,35 @@
     .bottom{z-index:10;flex:none;background:linear-gradient(180deg,#101f27,#0a1720);border-top:1px solid #30424b;padding:12px 15px calc(env(safe-area-inset-bottom) + 12px);box-shadow:0 -12px 34px #020b1090}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.stat{border:1px solid #29444c;border-radius:12px;background:#172a32;padding:9px 10px;min-height:61px}.stat .lbl{display:flex;align-items:center;gap:5px;color:#a3b8b9;font-size:10px;white-space:nowrap}.stat .value{font-size:17px;font-weight:750;letter-spacing:-.5px;margin-top:4px;white-space:nowrap}.stat .value small{font-size:10px;color:var(--muted);font-weight:500}
     .controls{display:flex;gap:9px;align-items:stretch}.pause{flex:1.08;min-width:0;border:1px solid #badac3;border-radius:13px;background:var(--mint);color:#092218;padding:11px 12px;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:800;font-size:13px}.speed-wrap{flex:1.6;min-width:0;display:flex;align-items:stretch;gap:5px;background:#172a33;border:1px solid #35505a;border-radius:13px;padding:5px}.speed-btn{flex:1;min-width:0;border:0;color:#9fb6b9;background:transparent;border-radius:9px;padding:6px 2px;font-size:12px;font-weight:800}.speed-btn.active{background:#34544d;color:var(--mint)}.newworld{width:43px;flex:none;border-radius:13px;border:1px solid #36505a;color:var(--text);background:#192c35;font-size:20px}.footnote{display:flex;justify-content:space-between;margin-top:11px;font-size:9px;letter-spacing:.4px;color:#799298}
     .scrim{position:absolute;z-index:20;inset:0;background:#0009;display:none}.scrim.open{display:block}.panel{position:absolute;z-index:21;top:0;right:0;bottom:0;width:min(420px,95vw);background:#0c1c25;border-left:1px solid #38535c;box-shadow:-20px 0 60px #0008;transform:translateX(103%);transition:transform .22s ease;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}.panel.open{transform:translateX(0)}.panelheader{display:flex;align-items:center;justify-content:space-between;padding:22px 20px 16px;border-bottom:1px solid #29424a}.panelheader h2{margin:0;font-size:23px}.panelheader .eyebrow{display:block;color:var(--aqua);letter-spacing:2px;font-size:10px;font-weight:800;margin-bottom:4px}.close{border:1px solid var(--stroke);background:#142933;border-radius:10px;color:var(--text);width:39px;height:39px;font-size:23px}.panelbody{overflow:auto;padding:18px 20px 35px;flex:1;overscroll-behavior:contain}.section{margin-bottom:23px}.section h3{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:var(--aqua);margin:0 0 12px}.section p{color:#afc3c4;font-size:12px;line-height:1.6}.metric-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:11px;background:#142b34;border-radius:11px;border:1px solid #2c4851}.metric label{display:block;color:var(--muted);font-size:10px}.metric strong{display:block;font-size:17px;margin-top:4px}.panelbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;border-radius:12px;border:1px solid #45616a;background:#1a333d;color:var(--text);font-weight:700;padding:11px;font-size:13px;margin:8px 0}.panelbtn.primary{color:#09251b;background:var(--mint);border-color:var(--mint)}.panelbtn.danger{color:#f9b1aa;border-color:#85554e;background:#352527}.seedinput{display:flex;gap:8px}.seedinput input{width:100%;min-width:0;padding:12px;background:#112831;border:1px solid #42606a;border-radius:11px;color:var(--text);font-size:16px}.seedinput button{padding:0 13px;border-radius:11px;border:1px solid #47656f;color:var(--text);background:#203942}.line{height:1px;background:#2a444e;margin:20px 0}.log{list-style:none;margin:0;padding:0}.log li{position:relative;border-left:1px solid #35585d;padding:0 0 16px 17px;color:#d3e1d8;font-size:12px;line-height:1.5}.log li::before{content:'';position:absolute;left:-4px;top:3px;width:7px;height:7px;background:var(--mint);border-radius:50%}.log time{display:block;color:var(--muted);font-size:10px;margin-bottom:3px}.pill{display:inline-block;color:var(--mint);background:#25453a;border:1px solid #43735b;border-radius:999px;padding:3px 8px;font-size:10px;vertical-align:middle}.toast{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom) + 126px);max-width:85%;transform:translateX(-50%);z-index:40;background:#e1f2d9;color:#153322;padding:12px 17px;border-radius:13px;box-shadow:0 12px 30px #0008;font-size:12px;font-weight:700;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}.confirm{z-index:35;position:absolute;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:20px}.confirm.open{display:flex}.dialog{background:#112832;border:1px solid #47626a;border-radius:19px;padding:23px;width:min(350px,95vw);box-shadow:0 26px 70px #000b}.dialog h3{font-size:20px;margin:0 0 8px}.dialog p{font-size:13px;color:#b2c8c8;line-height:1.55}.dialog .row{display:flex;gap:9px;margin-top:21px}.dialog button{flex:1;min-width:0;border-radius:11px;border:1px solid #4b6970;background:#253d44;color:var(--text);padding:12px}.dialog button.accept{background:var(--mint);color:#0b261d;font-weight:800;border-color:var(--mint)}
+    .layer-btn{position:absolute;left:13px;top:105px;border:1px solid #496c66;border-radius:11px;padding:9px 11px;background:#0e2926de;color:#c9f5d9;font-size:11px;font-weight:750;box-shadow:0 8px 25px #0006;max-width:145px}.layer-btn:active{transform:scale(.98)}
+    .eco-legend{position:absolute;left:13px;top:148px;max-width:170px;border:1px solid #35534f;background:#0e2928e8;border-radius:10px;padding:9px 11px;font-size:10px;color:#bad8cf;line-height:1.4;pointer-events:none}
+    .eco-legend[hidden]{display:none}.eco-legend .gradient{display:block;margin:7px 0 4px;height:7px;border-radius:8px;background:linear-gradient(90deg,#8e6d44,#e7bc72,#84a958,#267957)}
+    .eco-legend.moisture .gradient{background:linear-gradient(90deg,#ae7c4d,#c2af71,#5f9bb3,#204d84)}
+    .eco-legend.fertility .gradient{background:linear-gradient(90deg,#815e44,#bbab69,#7fb477,#23775f)}
+    .intervention-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.intervention-grid .panelbtn{margin:0;min-height:56px;text-align:center;line-height:1.4}.help-note{font-size:11px;color:var(--muted);line-height:1.5;margin:11px 0 0}
+    .inspect-grid.eco-inspect{margin-top:7px}.eco-kpi{color:#bdf3c6!important}
+    .life-indicator{position:absolute;left:14px;bottom:58px;border:1px solid #4f705d;background:#0b2626e8;border-radius:11px;padding:7px 10px;display:flex;align-items:center;gap:9px;color:#e7f5df;box-shadow:0 5px 22px #0006;pointer-events:none}
+    .life-indicator span{font-size:8px;letter-spacing:1.2px;color:#a8ceb2;font-weight:800}.life-indicator b{font-size:12px;white-space:nowrap}
+    .creature-note{font-size:11px;color:#c9e4d5;padding-top:10px;line-height:1.45}.creature-note.muted{color:#97b6ae;padding-top:4px}
+    #creatureInspect[hidden],#tileInspect[hidden]{display:none}
+    .gene-inspect{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .gene-min{background:#182e36;border:1px solid #385760;padding:8px;border-radius:9px;min-width:0}
+    .gene-min .gline{display:flex;justify-content:space-between;font-size:10px;color:#bdd3c9;gap:4px}
+    .gene-track{height:5px;border-radius:8px;background:#30505a;overflow:hidden;margin-top:6px}
+    .gene-track b{display:block;height:100%;background:linear-gradient(90deg,#70b9ab,#c1f0ad);border-radius:8px}
+    .gene-chart-wrap{margin-top:12px;border:1px solid #31515b;border-radius:13px;padding:12px;background:#112731}
+    .gene-chart-title{font-size:12px;font-weight:750;color:#e4f2e7;margin-bottom:8px}
+    #geneChart{display:block;width:100%;height:120px;border-radius:6px}
+    .gene-legend{display:flex;gap:16px;margin-top:5px;color:#9eb8b7;font-size:10px}
+    .gene-dot{display:inline-block;width:8px;height:8px;border-radius:100%;margin-right:5px;background:#f4d89b}
+    .gene-dot.pred{background:#ee9e88}
+    .gene-chart-wrap .help-note{margin-bottom:0}
+    .gene-setting-title{margin:14px 0 4px;font-size:11px;font-weight:750;color:#d6e9dd}
+    .mutation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+    .mutation-grid .panelbtn{margin:5px 0;padding:9px 2px;font-size:11px;min-height:40px}
+    .mutation-grid .panelbtn.active{background:#31594b;border-color:#9cd7ae;color:#d6ffe0}
+    .speed-wrap .speed-btn{font-size:10px;padding:5px 0}
+    @media(max-width:390px){.controls{gap:5px}.pause{padding:8px 4px;font-size:11px}.newworld{width:36px}.speed-wrap{padding:3px;gap:2px}.speed-wrap .speed-btn{font-size:9px}}
     @media(min-width:850px){.header{padding-left:32px;padding-right:32px}.bottom{padding:16px 32px 18px}.stats{grid-template-columns:repeat(3,minmax(0,1fr));max-width:650px;margin-left:auto;margin-right:auto}.controls{max-width:650px;margin:auto}.footnote{max-width:650px;margin:11px auto 0}.map-head{left:27px;right:27px}.side-actions{right:28px}.inspect{left:27px}.world-wrap{min-height:340px}}
     @media(max-width:350px){.brand .word{font-size:20px}.timebadge strong{font-size:10px}.top-icon{width:34px;height:34px}.stat{padding:8px 7px}.stat .value{font-size:15px}.stat .lbl{font-size:9px}.bottom{padding-left:9px;padding-right:9px}}
     @media(prefers-reduced-motion:reduce){.panel,.toast,.hint{transition:none}}
@@ -40,17 +69,50 @@
   <main class="world-wrap" id="mapWrap" aria-label="Mappa interattiva del mondo">
     <canvas id="world"></canvas><div class="vignette"></div><div class="mapgrain"></div>
     <div class="map-head"><div class="map-title"><div class="small">◉ MONDO IN OSSERVAZIONE</div><h1 id="worldName">Aurelia</h1><div class="seedline">SEED <span id="seedLabel">000000</span> · 128 × 128</div></div><div class="compass">N</div></div>
+    <button class="layer-btn" id="layerCycle" aria-label="Cambia livello mappa">◉ Terreno</button><div id="layerLegend" class="eco-legend" hidden><b id="layerLegendTitle">Vegetazione</b><span class="gradient"></span><span id="layerLegendNote">Scarsa · Abbondante</span></div>
     <div class="side-actions"><button id="zoomPlus" class="round" aria-label="Aumenta zoom">+</button><button id="zoomMinus" class="round" aria-label="Riduci zoom">−</button><button id="centerView" class="round" aria-label="Centra mondo" style="font-size:17px">⌖</button></div>
+    <div class="life-indicator" aria-live="off"><span>● VITA NEL MONDO</span><b id="animalCount">◌ 0 · ✦ 0</b></div>
     <div id="hint" class="hint">↔ Trascina · Pizzica per zoom · Tocca per esplorare</div>
-    <section class="inspect" id="inspect" aria-live="polite"><div class="inspect-top"><div><div class="inspect-name" id="inspectName">Foresta</div><div class="inspect-coord" id="inspectCoords">Coordinate 0, 0</div></div><button id="inspectClose" aria-label="Chiudi informazioni">×</button></div><div class="inspect-grid"><div class="inspect-item"><span>Altitudine</span><strong id="inspectHeight">0 m</strong></div><div class="inspect-item"><span>Umidità</span><strong id="inspectMoisture">0%</strong></div><div class="inspect-item"><span>Fertilità</span><strong id="inspectFertility">0%</strong></div></div></section>
+    <section class="inspect" id="inspect" aria-live="polite"><div class="inspect-top"><div><div class="inspect-name" id="inspectName">Foresta</div><div class="inspect-coord" id="inspectCoords">Coordinate 0, 0</div></div><button id="inspectClose" aria-label="Chiudi informazioni">×</button></div><div id="tileInspect"><div class="inspect-grid"><div class="inspect-item"><span>Altitudine</span><strong id="inspectHeight">0 m</strong></div><div class="inspect-item"><span>Umidità</span><strong id="inspectMoisture">0%</strong></div><div class="inspect-item"><span>Fertilità</span><strong id="inspectFertility">0%</strong></div></div><div class="inspect-grid eco-inspect"><div class="inspect-item"><span>Acqua nel suolo</span><strong id="inspectWater" class="eco-kpi">0%</strong></div><div class="inspect-item"><span>Vegetazione</span><strong id="inspectFlora" class="eco-kpi">0%</strong></div><div class="inspect-item"><span>Condizione</span><strong id="inspectStatus">—</strong></div></div></div><div id="creatureInspect" hidden><div class="inspect-grid"><div class="inspect-item"><span>Età</span><strong id="creatureAge">—</strong></div><div class="inspect-item"><span>Energia</span><strong id="creatureEnergy">—</strong></div><div class="inspect-item"><span>Idratazione</span><strong id="creatureThirst">—</strong></div></div><div class="creature-note" id="creatureBehavior"></div><div class="creature-note muted" id="creatureTraits"></div><div class="gene-inspect" id="genomeMini" aria-label="Geni della creatura"></div><div class="creature-note muted" id="creatureLineage"></div></div></section>
   </main>
-  <footer class="bottom"><div class="stats"><div class="stat"><div class="lbl">◌ Temperatura</div><div class="value" id="temp">21 <small>°C</small></div></div><div class="stat"><div class="lbl">◈ Territorio</div><div class="value" id="land">— <small>terra</small></div></div><div class="stat"><div class="lbl">◉ Meteo</div><div class="value" id="weather" style="font-size:14px">Sereno</div></div></div><div class="controls"><button class="pause" id="pause" aria-label="Metti in pausa o riprendi"><span id="pauseIcon">Ⅱ</span><span id="pauseText">Pausa</span></button><div class="speed-wrap" aria-label="Velocità simulazione"><button class="speed-btn active" data-speed="1">1×</button><button class="speed-btn" data-speed="2">2×</button><button class="speed-btn" data-speed="4">4×</button><button class="speed-btn" data-speed="8">8×</button></div><button class="newworld" id="newWorld" title="Nuovo mondo" aria-label="Genera nuovo mondo">⟳</button></div><div class="footnote"><span>GENESIS ENGINE · v0.1</span><span id="liveStatus">● SIMULAZIONE ATTIVA</span></div></footer>
+  <footer class="bottom"><div class="stats"><div class="stat"><div class="lbl">◌ Temperatura</div><div class="value" id="temp">21 <small>°C</small></div></div><div class="stat"><div class="lbl">◈ Territorio</div><div class="value" id="land">— <small>terra</small></div></div><div class="stat"><div class="lbl">◉ Meteo</div><div class="value" id="weather" style="font-size:14px">Sereno</div></div></div><div class="controls"><button class="pause" id="pause" aria-label="Metti in pausa o riprendi"><span id="pauseIcon">Ⅱ</span><span id="pauseText">Pausa</span></button><div class="speed-wrap" aria-label="Velocità simulazione"><button class="speed-btn active" data-speed="1">1×</button><button class="speed-btn" data-speed="2">2×</button><button class="speed-btn" data-speed="4">4×</button><button class="speed-btn" data-speed="8">8×</button><button class="speed-btn" data-speed="16">16×</button><button class="speed-btn" data-speed="32">32×</button></div><button class="newworld" id="newWorld" title="Nuovo mondo" aria-label="Genera nuovo mondo">⟳</button></div><div class="footnote"><span>GENESIS ENGINE · v0.4</span><span id="liveStatus">● SIMULAZIONE ATTIVA</span></div></footer>
   <div class="scrim" id="scrim"></div><aside class="panel" id="panel" aria-hidden="true"><div class="panelheader"><div><span class="eyebrow">CONSOLE DELL'OSSERVATORE</span><h2>Laboratorio</h2></div><button class="close" id="closePanel" aria-label="Chiudi laboratorio">×</button></div><div class="panelbody">
-    <div class="section"><h3>Il tuo universo <span class="pill">LOCALE</span></h3><div class="metric-list"><div class="metric"><label>Nome del mondo</label><strong id="pName">—</strong></div><div class="metric"><label>Giorni trascorsi</label><strong id="pDays">0</strong></div><div class="metric"><label>Terra emersa</label><strong id="pLand">0%</strong></div><div class="metric"><label>Foreste</label><strong id="pForest">0%</strong></div><div class="metric"><label>Celle del mondo</label><strong>16.384</strong></div><div class="metric"><label>Specie viventi</label><strong>In arrivo</strong></div></div></div>
+    <div class="section"><h3>Il tuo universo <span class="pill">LOCALE</span></h3><div class="metric-list"><div class="metric"><label>Nome del mondo</label><strong id="pName">—</strong></div><div class="metric"><label>Giorni trascorsi</label><strong id="pDays">0</strong></div><div class="metric"><label>Terra emersa</label><strong id="pLand">0%</strong></div><div class="metric"><label>Foreste</label><strong id="pForest">0%</strong></div><div class="metric"><label>Celle del mondo</label><strong>16.384</strong></div><div class="metric"><label>Specie viventi</label><strong id="pSpecies">2</strong></div></div></div>
+    <div class="section"><h3>Ecosistema vivente <span class="pill">NUOVO</span></h3><div class="metric-list"><div class="metric"><label>Copertura vegetale media</label><strong id="ecoFlora">—</strong></div><div class="metric"><label>Acqua media nel terreno</label><strong id="ecoWater">—</strong></div><div class="metric"><label>Terreno in sofferenza</label><strong id="ecoStress">—</strong></div><div class="metric"><label>Superficie vegetata</label><strong id="ecoGreen">—</strong></div></div><p>Ogni giorno simulato aggiorna le riserve d’acqua e la vegetazione. Pioggia, evaporazione, fertilità e stagioni influenzano la crescita.</p><div class="intervention-grid"><button class="panelbtn" id="rainNow">☂ Pioggia intensa</button><button class="panelbtn" id="droughtNow">☀ Provoca siccità</button><button class="panelbtn" id="sowNow">♧ Semina</button><button class="panelbtn" id="resetEco">↺ Ripristina ecosistema</button></div><p class="help-note">Gli esperimenti modificano realmente il mondo e si salvano nei backup. Il ripristino ecologico non cambia il territorio né il giorno corrente.</p></div>
+    <div class="section"><h3>La vita nel mondo <span class="pill">NUOVO</span></h3>
+      <p>Gli erbivori esplorano il territorio in cerca di vegetazione e acqua. I predatori cercano prede. Ogni creatura possiede energia, età e tratti ereditabili.</p>
+      <div class="metric-list">
+        <div class="metric"><label>◌ Erbivori</label><strong id="lifeHerbs">0</strong></div>
+        <div class="metric"><label>✦ Predatori</label><strong id="lifePreds">0</strong></div>
+        <div class="metric"><label>Nascite totali</label><strong id="lifeBirths">0</strong></div>
+        <div class="metric"><label>Morti totali</label><strong id="lifeDeaths">0</strong></div>
+      </div>
+      <div class="intervention-grid">
+        <button class="panelbtn" id="addHerb">◌ Introduci 12 erbivori</button>
+        <button class="panelbtn" id="addPred">✦ Introduci 3 predatori</button>
+        <button class="panelbtn" id="focusLife">⌖ Cerca le creature</button>
+        <button class="panelbtn" id="showLife" aria-pressed="true">◉ Creature visibili</button>
+      </div>
+      <p class="help-note">Tocca una creatura per vedere la genealogia e i suoi geni. La popolazione è limitata per mantenere fluido l'iPhone.</p>
+    </div>
+    <div class="section" id="evolutionSection"><h3>Evoluzione naturale <span class="pill">0.4</span></h3>
+      <p>Ogni creatura eredita quattro caratteristiche dai genitori. Le mutazioni possono modificarle: il clima, il cibo e le interazioni favoriscono chi sopravvive e si riproduce. Nessuna specie ha un'evoluzione prestabilita.</p>
+      <div class="metric-list">
+        <div class="metric"><label>Generazione più alta</label><strong id="geneMaxGeneration">1</strong></div>
+        <div class="metric"><label>Mutazioni osservate</label><strong id="geneMutations">0</strong></div>
+        <div class="metric"><label>Linee familiari</label><strong id="geneGeneticLines">0</strong></div>
+        <div class="metric"><label>Efficienza media</label><strong id="geneAvg">—</strong></div>
+      </div>
+      <div class="gene-chart-wrap"><div class="gene-chart-title">Adattamento nelle generazioni</div><canvas id="geneChart" height="120" aria-label="Grafico storico dell'efficienza: erbivori e predatori" role="img"></canvas><div class="gene-legend"><span><i class="gene-dot herb"></i> Erbivori</span><span><i class="gene-dot pred"></i> Predatori</span></div><p class="help-note" id="geneChartNote">Il grafico si aggiorna ogni 10 giorni simulati.</p></div>
+      <p class="gene-setting-title">Intensità delle mutazioni nei nuovi nati</p>
+      <div class="mutation-grid"><button class="panelbtn" data-mutation="0">Stabili</button><button class="panelbtn" data-mutation="0.1">Naturali</button><button class="panelbtn" data-mutation="0.35">Rapide</button></div>
+      <p class="help-note">Una mutazione non è automaticamente un miglioramento: alcuni cambiamenti possono rendere la sopravvivenza più difficile. Le creature attuali non vengono modificate dai pulsanti.</p>
+    </div>
+    <div class="section"><h3>Livelli della mappa</h3><div class="intervention-grid"><button class="panelbtn" data-layer="terrain">◉ Terreno</button><button class="panelbtn" data-layer="flora">♣ Vegetazione</button><button class="panelbtn" data-layer="moisture">◈ Acqua nel suolo</button><button class="panelbtn" data-layer="fertility">◇ Fertilità</button></div></div>
     <div class="section"><h3>Generazione procedurale</h3><p>Ogni seme crea sempre lo stesso territorio. Inserisci un numero per ricreare un mondo o usa quello casuale.</p><div class="seedinput"><input id="seedInput" type="number" inputmode="numeric" min="1" max="2147483646" placeholder="Seme numerico" aria-label="Seme numerico"><button id="randomSeed" aria-label="Scegli seme casuale">⚄</button></div><button id="generateSeed" class="panelbtn primary">✧ Genera questo mondo</button></div>
     <div class="section"><h3>Salvataggi e backup</h3><p>Il mondo viene salvato automaticamente sul tuo iPhone. Esporta un file per conservare una copia anche fuori da Safari.</p><button id="saveNow" class="panelbtn">◉ Salva ora</button><button id="exportSave" class="panelbtn">↥ Esporta backup .json</button><button id="importSave" class="panelbtn">↧ Importa backup .json</button><input id="importFile" type="file" accept=".json,application/json" hidden></div>
     <div class="section"><h3>Cronache del mondo</h3><ul id="eventLog" class="log"></ul></div>
-    <div class="section"><h3>Cosa arriverà</h3><p><b>Genesis 0.2:</b> ciclo dell'acqua, clima territoriale e risorse. <b>Genesis 0.3:</b> le prime creature che vivono, si nutrono e si riproducono. Non sono ancora presenti in questa versione.</p></div>
+    <div class="section"><h3>Prossimo orizzonte</h3><p><b>Genesis 0.4:</b> ora attivo — genomi, genealogia, mutazioni, selezione naturale e statistiche. <b>Genesis 0.5:</b> nuove specie, relazioni tra popolazioni e nicchie ecologiche.</p></div>
     <div class="section"><h3>Informazioni</h3><p>100% locale. Nessun account, API, pubblicità, tracciamento o acquisto. Il mondo continua soltanto mentre l'app è aperta: iOS può sospendere le applicazioni in background.</p></div>
   </div></aside>
   <div class="confirm" id="confirm" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><div class="dialog"><h3 id="dialogTitle">Creare un nuovo mondo?</h3><p id="dialogText">Il mondo attuale verrà sostituito. Esporta un backup se desideri conservarlo.</p><div class="row"><button id="cancelNew">Annulla</button><button class="accept" id="acceptNew">Genera</button></div></div></div>
@@ -58,11 +120,11 @@
 </div>
 <script>
 (()=>{'use strict';
- const SIZE=128,TILE=7,MAP=SIZE*TILE,KEY='genesis-world-v1',NAMES=['Aurelia','Eos','Lunaria','Nemoris','Thalassa','Solara','Orion','Verdantia','Arcadia','Caldera','Erya','Ilyria'];
+ const SIZE=128,TILE=7,MAP=SIZE*TILE,KEY='genesis-world-v4',PREV_KEY='genesis-world-v3',OLD_KEY='genesis-world-v2',FIRST_KEY='genesis-world-v1',NAMES=['Aurelia','Eos','Lunaria','Nemoris','Thalassa','Solara','Orion','Verdantia','Arcadia','Caldera','Erya','Ilyria'];
  const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false}),mapWrap=$('mapWrap');
  if(!ctx){alert('Questo browser non supporta Canvas 2D.');return;}
  const el={date:$('date'),season:$('season'),worldName:$('worldName'),seedLabel:$('seedLabel'),temp:$('temp'),land:$('land'),weather:$('weather'),pause:$('pause'),pauseIcon:$('pauseIcon'),pauseText:$('pauseText'),liveStatus:$('liveStatus'),hint:$('hint'),inspect:$('inspect'),inspectName:$('inspectName'),inspectCoords:$('inspectCoords'),inspectHeight:$('inspectHeight'),inspectMoisture:$('inspectMoisture'),inspectFertility:$('inspectFertility'),panel:$('panel'),scrim:$('scrim'),seedInput:$('seedInput'),eventLog:$('eventLog'),toast:$('toast')};
- let seed=738291,simDay=0.35,speed=1,paused=false,world=null,off=document.createElement('canvas'),offCtx=off.getContext('2d'),screenW=0,screenH=0,dpr=1,zoom=1,panX=0,panY=0,hoverTile=null,seasonIndex=-1,lastTs=0,lastUI=0,anim=0,log=[],lastWeatherId=-1,needsDraw=true,toastTimeout=0,confirmAction=null;
+ let seed=738291,simDay=0.35,speed=1,paused=false,world=null,off=document.createElement('canvas'),offCtx=off.getContext('2d'),screenW=0,screenH=0,dpr=1,zoom=1,panX=0,panY=0,hoverTile=null,seasonIndex=-1,lastTs=0,lastUI=0,anim=0,log=[],lastWeatherId=-1,needsDraw=true,toastTimeout=0,confirmAction=null,eco=null,ecoMetrics={flora:0,water:0,stress:0,green:0,land:1},lastEcoDay=0,viewLayer='terrain',life=null,selectedCreatureId=null,showCreatures=true,mutationRate=.10;
  off.width=MAP;off.height=MAP;
  function mod(n,m){return ((n%m)+m)%m}
  function hash(x,y,s=seed){let n=Math.imul(x+Math.imul(y,374761393),668265263) ^ (s|0);n=Math.imul(n^(n>>>13),1274126177);return ((n^(n>>>16))>>>0)/4294967295}
@@ -71,7 +133,7 @@
  function clamp(n,a,b){return Math.min(b,Math.max(a,n))}
  function lerp(a,b,t){return a+(b-a)*t}
  function color(hex,delta=0){const v=parseInt(hex.slice(1),16),r=clamp((v>>16)+delta,0,255),g=clamp(((v>>8)&255)+delta,0,255),b=clamp((v&255)+delta,0,255);return `rgb(${r|0},${g|0},${b|0})`}
- // Stable terrain is generated from its seed; world state contains only time and preferences.
+ // Stable terrain is generated from its seed; the ecosystem is stored separately as compact state.
  function generateTerrain(s){seed=s;const tiles=new Array(SIZE*SIZE),stats={water:0,land:0,forest:0,mountain:0,river:0};const levels=new Float32Array(SIZE*SIZE);const moist=new Float32Array(SIZE*SIZE);
   for(let y=0;y<SIZE;y++)for(let x=0;x<SIZE;x++){
    const nx=x/(SIZE-1),ny=y/(SIZE-1),r=Math.sqrt(Math.pow((nx-.5)*1.30,2)+Math.pow((ny-.50)*1.17,2));
@@ -98,14 +160,281 @@
   }
   return {tiles,stats,seed:s,name:NAMES[s%NAMES.length]};
  }
+
+ // GENESIS 0.2 — discrete daily ecological simulation; no external dependencies.
+ const N=SIZE*SIZE,LAND_BIOMES=new Set(['forest','meadow','dry','highland','mountain','snow']);
+ function landTile(t){return LAND_BIOMES.has(t.biome)}
+ function initEcology(){
+   eco={water:new Uint8Array(N),flora:new Uint8Array(N)};
+   for(let i=0;i<N;i++){const t=world.tiles[i];if(!landTile(t))continue;
+     const extra=hash(t.x,t.y,seed+371);eco.water[i]=Math.round(clamp(t.m*87+(extra-.5)*13,4,98));
+     const root={forest:75,meadow:46,dry:13,highland:29,mountain:7,snow:2}[t.biome];
+     eco.flora[i]=Math.round(clamp(root*(.75+extra*.48)*(t.fert/100+.28),0,100));
+   }
+   lastEcoDay=Math.floor(simDay);calculateEcoMetrics();
+ }
+ function calculateEcoMetrics(){let flora=0,water=0,stress=0,green=0,land=0;for(let i=0;i<N;i++){
+   if(!landTile(world.tiles[i]))continue;land++;const w=eco.water[i],f=eco.flora[i];flora+=f;water+=w;
+   if(w<25)stress++;if(f>=30)green++;
+ }ecoMetrics={flora:Math.round(flora/Math.max(1,land)),water:Math.round(water/Math.max(1,land)),stress:Math.round(stress/Math.max(1,land)*100),green:Math.round(green/Math.max(1,land)*100),land}}
+ function simulateEcoDay(day){
+   const season=Math.floor(mod(day,120)/30),weather=weatherForDay(day),rain=weather.kind==='rain',cloud=weather.kind==='cloud';
+   const seasonGrowth=[1.15,1.28,.72,.26][season],seasonEvap=[1.2,2.6,1.4,.58][season];
+   for(let i=0;i<N;i++){
+     const t=world.tiles[i];if(!landTile(t))continue;
+     const w=eco.water[i],f=eco.flora[i],fert=t.fert/100,noise=(hash(t.x+day*17,t.y,seed+997)-.5);
+     // Recharging and evaporation create local variation; mountains/snow retain more humidity.
+     const target=t.m*87+(t.biome==='snow'?16:0),precipitation=rain?(4.9+noise*2.2):cloud?1.05:0;
+     const evap=seasonEvap+(t.biome==='dry'?.9:0)-(t.biome==='forest'?.3:0);
+     const newW=clamp(w+(target-w)*.046+precipitation-evap,0,100);
+     const capacity={forest:100,meadow:85,dry:34,highland:57,mountain:17,snow:10}[t.biome];
+     const growth=(.18+fert*.82)*seasonGrowth*(newW/100)*3.9*(1-f/capacity);
+     const droughtLoss=newW<29?(29-newW)/29*1.6:0;
+     const newF=clamp(f+growth-.10-droughtLoss+(noise*.25),0,capacity);
+     eco.water[i]=Math.round(newW);eco.flora[i]=Math.round(newF);
+   }
+   lastEcoDay=day;calculateEcoMetrics();
+   if(day%15===0)logEvent(`Rapporto ecologico: vegetazione ${ecoMetrics.flora}%, acqua nel suolo ${ecoMetrics.water}%.`);
+ }
+
+ // GENESIS 0.4 — heritable genomes, mutations, ancestry and emergent natural selection.
+ // Mobile limits prevent uncontrolled memory/CPU growth. No generative AI or network.
+ const LIFE_LIMIT=300,HERB_LIMIT=245,PRED_LIMIT=55;
+ const LIFE_NAMES=['Asha','Neri','Aria','Elen','Luma','Taro','Sira','Noma','Vega','Lio','Iris','Mira','Oren','Rhea','Edo','Faye'];
+ function animalRand(id,day,salt=0){return hash((id*31+salt*17)|0,day|0,seed+7907)}
+ function animalName(id){return LIFE_NAMES[(id*7+seed)%LIFE_NAMES.length]+' '+id}
+ function validSpot(x,y){return x>=2&&y>=2&&x<SIZE-2&&y<SIZE-2&&landTile(world.tiles[y*SIZE+x])}
+ function findSpot(sourceX,sourceY,offset=12){
+   let best=null,bestScore=-1;
+   for(let tries=0;tries<70;tries++){
+     const x=sourceX===null?2+Math.floor(hash(tries,23,seed+offset)*124):clamp(sourceX+Math.floor((hash(tries,41,seed+offset)-.5)*offset),2,SIZE-3);
+     const y=sourceY===null?2+Math.floor(hash(tries,72,seed+offset)*124):clamp(sourceY+Math.floor((hash(tries,99,seed+offset)-.5)*offset),2,SIZE-3);
+     if(!validSpot(x,y))continue;
+     const i=y*SIZE+x,score=eco.flora[i]*.55+eco.water[i]*.45;
+     if(score>bestScore){best={x,y};bestScore=score}
+     if(score>42)break;
+   }
+   if(best)return best;
+   for(let i=0;i<N;i++)if(landTile(world.tiles[i]))return{x:i%SIZE,y:(i/SIZE)|0};
+   return null;
+ }
+ const GENES=['metabolism','perception','agility','resilience'];
+ const GENE_LABELS={metabolism:'Efficienza',perception:'Percezione',agility:'Agilità',resilience:'Resistenza'};
+ function baseGenome(id,oldTrait=null){
+   const g={};for(let j=0;j<GENES.length;j++)g[GENES[j]]=clamp(.85+animalRand(id,83+j*31,345+j)*.30,.70,1.30);
+   if(Number.isFinite(oldTrait))g.metabolism=clamp(oldTrait,.70,1.30);
+   return g;
+ }
+ function genomeOf(a){if(!a.genome)a.genome=baseGenome(a.id,a.trait);return a.genome}
+ function babyGenome(id,parent,mate){const g={};let changes=0;
+   for(let j=0;j<GENES.length;j++){
+     const key=GENES[j],x=genomeOf(parent)[key],y=genomeOf(mate)[key];
+     const inheritance=(animalRand(id,Math.floor(simDay),204+j)-.5)*.055;
+     const mutation=animalRand(id,Math.floor(simDay),510+j)<mutationRate;
+     const delta=mutation?(animalRand(id,Math.floor(simDay),612+j)-.5)*.28:0;
+     g[key]=Math.round(clamp((x+y)/2+inheritance+delta,.70,1.30)*1000)/1000;
+     if(mutation)changes++;
+   }
+   return {genome:g,changes};
+ }
+ function geneticMetrics(){const animals=life?.creatures||[];const counts=lifeCounts(),lines=new Set(),av={herb:0,pred:0};let total=0,maxGen=1;
+   for(const a of animals){const g=genomeOf(a);total+=g.metabolism;av[a.kind]+=g.metabolism;maxGen=Math.max(maxGen,a.generation||1);lines.add(a.lineage||a.id)}
+   return {total:animals.length,avg:animals.length?total/animals.length:0,herb:counts.herb?av.herb/counts.herb:null,pred:counts.pred?av.pred/counts.pred:null,gen:maxGen,lines:lines.size};
+ }
+ function addEvolutionSample(day){if(!life)return;const m=geneticMetrics();
+   const last=life.history?.[life.history.length-1];if(last&&last.day===day)return;
+   life.history=Array.isArray(life.history)?life.history:[];
+   life.history.push({day,herb:m.herb,pred:m.pred,herbN:lifeCounts().herb,predN:lifeCounts().pred});
+   if(life.history.length>160)life.history.shift();
+ }
+ function spawnCreature(kind,x,y,parent=null,mate=null){
+   if(!life||life.creatures.length>=LIFE_LIMIT)return null;
+   const count=life.creatures.reduce((n,a)=>n+(a.kind===kind),0);
+   if(count>=(kind==='herb'?HERB_LIMIT:PRED_LIMIT))return null;
+   const spot=validSpot(x,y)?{x,y}:findSpot(x,y,10);if(!spot)return null;
+   const id=life.nextId++;
+   const child=parent&&mate?babyGenome(id,parent,mate):null;
+   const genome=child?.genome||baseGenome(id,parent?.trait??null);
+   if(child)life.mutations+=child.changes;
+   const creature={id,kind,x:spot.x,y:spot.y,px:spot.x,py:spot.y,age:child?0:Math.floor(animalRand(id,16)*10)+3,
+      energy:child?75:70+Math.floor(animalRand(id,20)*25),thirst:child?72:72+Math.floor(animalRand(id,24)*24),
+      trait:genome.metabolism,genome,generation:child?Math.max(parent.generation||1,mate.generation||1)+1:1,
+      parents:child?[parent.id,mate.id]:[],lineage:child?(parent.lineage||parent.id):id,born:Math.floor(simDay),
+      sex:animalRand(id,31)<.5?'F':'M',lastBirth:-30,lastHunt:-80,behavior:'Esplora il territorio'};
+   life.creatures.push(creature);return creature;
+ }
+ function populateInitialLife(){life={creatures:[],nextId:1,births:0,deaths:0,hunts:0,mutations:0,history:[]};
+   const colonies=[];for(let i=0;i<5;i++){const p=findSpot(null,null,71+i*97);if(p)colonies.push(p)}
+   if(!colonies.length)return;
+   for(let i=0;i<65;i++){const p=colonies[i%colonies.length];const pos=findSpot(p.x,p.y,9+i%4);if(pos)spawnCreature('herb',pos.x,pos.y)}
+   for(let i=0;i<6;i++){const p=colonies[Math.floor(i/2)%colonies.length];const pos=findSpot(p.x,p.y,4+i%3);if(pos){const a=spawnCreature('pred',pos.x,pos.y);if(a)a.sex=i%2?'M':'F'}}
+   addEvolutionSample(Math.floor(simDay));
+ }
+ function lifeCounts(){let herb=0,pred=0;for(const a of life?.creatures||[]){if(a.kind==='herb')herb++;else pred++}return{herb,pred}}
+ function restoreLife(state){
+   if(!state||!Array.isArray(state.creatures)||state.creatures.length>LIFE_LIMIT)return false;
+   const good=[];const used=new Set();let maxId=0;
+   for(const v of state.creatures){
+     if(!v||!Number.isSafeInteger(v.id)||v.id<=0||used.has(v.id)||!['herb','pred'].includes(v.kind)||!Number.isInteger(v.x)||!Number.isInteger(v.y)||!validSpot(v.x,v.y))return false;
+     if(![v.energy,v.thirst,v.age,v.trait].every(Number.isFinite))return false;
+     used.add(v.id);maxId=Math.max(maxId,v.id);
+     const genome=baseGenome(v.id,v.trait);if(v.genome&&typeof v.genome==='object')for(const key of GENES)if(Number.isFinite(v.genome[key]))genome[key]=clamp(v.genome[key],.70,1.30);
+     good.push({id:v.id,kind:v.kind,x:v.x,y:v.y,px:validSpot(v.px,v.py)?v.px:v.x,py:validSpot(v.px,v.py)?v.py:v.y,
+       energy:clamp(v.energy,0,100),thirst:clamp(v.thirst,0,100),age:clamp(v.age,0,10000),trait:genome.metabolism,genome,
+       generation:Number.isSafeInteger(v.generation)?clamp(v.generation,1,100000):1,
+       lineage:Number.isSafeInteger(v.lineage)&&v.lineage>0?v.lineage:v.id,
+       parents:Array.isArray(v.parents)?v.parents.filter(p=>Number.isSafeInteger(p)&&p>0).slice(0,2):[],
+       born:Number.isFinite(v.born)?v.born:Math.max(0,Math.floor(simDay-v.age)),
+       sex:v.sex==='M'?'M':'F',lastBirth:Number.isFinite(v.lastBirth)?v.lastBirth:-30,
+       lastHunt:Number.isFinite(v.lastHunt)?v.lastHunt:-80,behavior:'Esplora il territorio'});
+   }
+   const history=Array.isArray(state.history)?state.history.slice(-160).filter(h=>h&&Number.isFinite(h.day)&&[h.herb,h.pred].every(v=>v===null||Number.isFinite(v))).map(h=>({day:h.day,herb:h.herb,pred:h.pred,herbN:Math.max(0,Number(h.herbN)||0),predN:Math.max(0,Number(h.predN)||0)})):[];
+   life={creatures:good,nextId:Math.max(maxId+1,Number.isSafeInteger(state.nextId)?state.nextId:1),births:clamp(Number(state.births)||0,0,999999),deaths:clamp(Number(state.deaths)||0,0,999999),hunts:clamp(Number(state.hunts)||0,0,999999),mutations:clamp(Number(state.mutations)||0,0,999999),history};
+   if(!history.length)addEvolutionSample(Math.floor(simDay));
+   return true;
+ }
+ function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+ function nearest(a,kind,radius){let found=null,min=radius;for(const b of life.creatures){if(b===a||b.kind!==kind||b.energy<=0)continue;const d=dist(a,b);if(d<min){min=d;found=b}}return found}
+ function chooseMove(a,day){
+   const options=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+   const g=genomeOf(a);
+   const prey=a.kind==='pred'&&a.energy<83?nearest(a,'herb',9+g.perception*10):null;
+   const hunter=a.kind==='herb'?nearest(a,'pred',3+g.perception*3):null;
+   let best={x:a.x,y:a.y},bestScore=-Infinity;
+   for(let j=0;j<options.length;j++){
+     const [dx,dy]=options[j],x=a.x+dx,y=a.y+dy;if(!validSpot(x,y))continue;
+     const idx=y*SIZE+x,flora=eco.flora[idx],water=eco.water[idx];
+     let score=animalRand(a.id,day,31+j)*5;
+     if(a.kind==='herb')score+=flora*(a.energy<75?.45:.16)+water*(a.thirst<60?.43:.15);
+     else score+=water*(a.thirst<50?.26:.08)+flora*.015;
+     if(prey)score+=(16-Math.hypot(x-prey.x,y-prey.y))*9*g.perception;
+     if(hunter)score+=Math.hypot(x-hunter.x,y-hunter.y)*12*g.perception;
+     if(x===a.x&&y===a.y)score-=1;
+     if(score>bestScore){bestScore=score;best={x,y}}
+   }
+   a.px=a.x;a.py=a.y;a.x=best.x;a.y=best.y;
+ }
+ function simulateLifeDay(day){if(!life)return;
+   const before=lifeCounts(),newborns=[];let consumed=0;
+   const season=Math.floor(mod(day,120)/30);
+   const members=life.creatures;
+   for(const a of members){
+     if(a.energy<=0)continue;
+     const g=genomeOf(a);a.age+=1;
+     const cold=season===3?(1.3-g.resilience)*3:0;
+     const heat=season===1?(1.3-g.resilience)*2.6:0;
+     a.energy-=(a.kind==='herb'?4.5:3.25)/g.metabolism+Math.max(0,cold);
+     a.thirst-=6.2/g.resilience+Math.max(0,heat);
+     a.behavior='Esplora';
+     chooseMove(a,day);
+     const extraMove=animalRand(a.id,day,200)<clamp((g.agility-.70)*.38,0,.27);
+     if((a.kind==='pred'&&a.energy<72&&nearest(a,'herb',17))||extraMove)chooseMove(a,day+178);
+     const idx=a.y*SIZE+a.x,w=eco.water[idx];
+     if(w>=24){a.thirst=clamp(a.thirst+Math.min(21,(w-14)*.30)*g.resilience,0,100);a.behavior='Beve'}
+     if(a.kind==='herb'){
+       const eat=Math.min(eco.flora[idx],(a.energy<80?12:5)*g.perception);
+       if(eat>0){eco.flora[idx]=Math.round(Math.max(0,eco.flora[idx]-eat));a.energy=clamp(a.energy+eat*.88,0,100);a.behavior='Pascola';consumed+=eat}
+     }else{
+       const prey=nearest(a,'herb',2.4+g.perception*.7);
+       if(prey&&prey.energy>0&&a.energy<59&&day-a.lastHunt>=10){
+         const p=genomeOf(prey),chance=clamp(.62+(g.agility-p.agility)*.33+(g.perception-p.perception)*.20,.36,.90);
+         if(animalRand(a.id,day,181)<chance){prey.energy=-100;a.energy=clamp(a.energy+65,0,100);a.lastHunt=day;a.behavior='Caccia';life.hunts++}
+         else a.behavior='Preda sfuggita';
+       }else a.behavior='Cerca una preda';
+     }
+     const oldAge=a.kind==='herb'?142:158;
+     if(a.age>oldAge||a.energy<=0||a.thirst<=0){a.energy=-100;continue}
+     if(a.sex==='F'&&a.age>13&&a.energy>68&&a.thirst>58&&day-a.lastBirth>=10){
+       const mate=nearest(a,a.kind,3+g.perception*1.3);
+       const predatorRoom=clamp(before.herb/Math.max(1,before.pred*13),.12,1);const chance=(a.kind==='herb'?.085:.045*predatorRoom)*(g.resilience*.94);
+       const speciesCount=a.kind==='herb'?before.herb:before.pred;
+       const maxSpecies=a.kind==='herb'?HERB_LIMIT:PRED_LIMIT;
+       if(mate&&mate.sex==='M'&&mate.age>13&&mate.energy>58&&mate.thirst>50&&day-mate.lastBirth>=10&&speciesCount+newborns.filter(b=>b.kind===a.kind).length<maxSpecies&&animalRand(a.id,day,87)<chance&&members.length+newborns.length<LIFE_LIMIT){
+         newborns.push({kind:a.kind,x:a.x,y:a.y,parent:a,mate});a.energy-=15;mate.energy-=8;a.lastBirth=day;mate.lastBirth=day;a.behavior='Si riproduce';
+       }
+     }
+     a.energy=clamp(a.energy,0,100);a.thirst=clamp(a.thirst,0,100);
+   }
+   life.creatures=members.filter(a=>a.energy>0&&a.thirst>0);
+   const dead=members.length-life.creatures.length;life.deaths+=dead;
+   for(const baby of newborns){if(baby.parent.energy<=0||baby.mate.energy<=0)continue;
+      const created=spawnCreature(baby.kind,baby.x,baby.y,baby.parent,baby.mate);if(created){life.births++;if(created.generation%3===0)logEvent(`È nata la generazione ${created.generation}: ${animalName(created.id)}.`)}}
+   calculateEcoMetrics();const after=lifeCounts();
+   if(selectedCreatureId&&!life.creatures.some(a=>a.id===selectedCreatureId)){selectedCreatureId=null;el.inspect.classList.remove('open')}else if(selectedCreatureId)refreshInspection();
+   if(day%10===0){addEvolutionSample(day);logEvent(`Fauna: ${after.herb} erbivori, ${after.pred} predatori. Nascite: ${life.births}, mutazioni: ${life.mutations}.`)}
+   if(before.herb>0&&after.herb===0)logEvent('Gli erbivori si sono estinti. Puoi reintrodurli dal laboratorio.');
+   if(before.pred>0&&after.pred===0)logEvent('I predatori si sono estinti. Puoi reintrodurli dal laboratorio.');
+ }
+ function introduceLife(kind,count){if(!life)return;
+   const current=lifeCounts();const possible=Math.max(0,Math.min(count,LIFE_LIMIT-life.creatures.length,(kind==='herb'?HERB_LIMIT-current.herb:PRED_LIMIT-current.pred)));
+   if(!possible){toast('Il numero massimo di creature è stato raggiunto.');return}
+   let added=0;for(let i=0;i<possible;i++){
+     const colony=life.creatures.filter(a=>a.kind===kind);
+     const parent=colony.length?colony[Math.floor(animalRand(i+life.nextId,Math.floor(simDay),99)*colony.length)]:null;
+     const loc=parent?findSpot(parent.x,parent.y,9):findSpot(null,null,Math.floor(simDay)+i*61);
+     if(loc&&spawnCreature(kind,loc.x,loc.y))added++;
+   }
+   logEvent(`Introdotti ${added} nuovi ${kind==='herb'?'erbivori':'predatori'} nel mondo.`);saveWorld();updateUI();needsDraw=true;toast(`Nuove creature: ${added}`)
+ }
+ function drawCreatures(left,top,sc){
+   if(!showCreatures||!life)return;
+   const p=mod(simDay,1),rad=clamp(TILE*sc*.42,2.7,8);
+   for(const a of life.creatures){const x=left+(lerp(a.px,a.x,p)+.5)*TILE*sc,y=top+(lerp(a.py,a.y,p)+.5)*TILE*sc;
+     if(x<-12||y<-12||x>screenW+12||y>screenH+12)continue;
+     const isPred=a.kind==='pred',g=genomeOf(a);ctx.beginPath();ctx.arc(x,y,isPred?rad*.88:rad,0,Math.PI*2);
+     ctx.fillStyle=isPred?(g.resilience>1.12?'#f0b993':'#f49b81'):(g.resilience>1.12?'#c8faab':'#ffe9a3');ctx.fill();ctx.lineWidth=1;ctx.strokeStyle=isPred?'#753a37':'#7a632d';ctx.stroke();
+     if(a.generation>=3&&rad>=4){ctx.beginPath();ctx.arc(x,y,Math.max(1,rad*.24),0,Math.PI*2);ctx.fillStyle='#122a2c';ctx.fill()}
+     if(a.id===selectedCreatureId){ctx.beginPath();ctx.arc(x,y,rad+5,0,Math.PI*2);ctx.strokeStyle='#c1fff0';ctx.lineWidth=1.5;ctx.stroke()}
+   }
+ }
+ function focusLife(){const a=life?.creatures?.find(v=>v.kind==='herb')||life?.creatures?.[0];if(!a){toast('Non ci sono creature. Introducine dal laboratorio.');return}
+   zoom=Math.max(zoom,3.1);const sc=scale();panX=screenW/2-(a.x*TILE+TILE/2-MAP/2)*sc;panY=screenH/2-(a.y*TILE+TILE/2-MAP/2)*sc;
+   panClamp();selectedCreatureId=a.id;hoverTile=world.tiles[a.y*SIZE+a.x];refreshInspection();el.inspect.classList.add('open');closePanel();needsDraw=true;
+ }
+ function inspectCreatureAt(screenX,screenY){if(!showCreatures||!life||!life.creatures.length)return null;
+   const sc=scale(),left=panX-MAP*sc/2,top=panY-MAP*sc/2,p=mod(simDay,1);
+   let found=null,best=Math.max(13,TILE*sc*.73);
+   for(const a of life.creatures){const x=left+(lerp(a.px,a.x,p)+.5)*TILE*sc,y=top+(lerp(a.py,a.y,p)+.5)*TILE*sc;
+     const d=Math.hypot(x-screenX,y-screenY);if(d<best){best=d;found=a}}
+   return found;
+ }
+
+ function bytesToBase64(bytes){let out='';const step=4096;for(let i=0;i<bytes.length;i+=step){out+=String.fromCharCode(...bytes.subarray(i,i+step))}return btoa(out)}
+ function base64ToBytes(encoded){const binary=atob(encoded);if(binary.length!==N)throw Error('Dimensione dati ecologici non valida');const bytes=new Uint8Array(N);for(let i=0;i<N;i++)bytes[i]=binary.charCodeAt(i);return bytes}
+ function restoreEcology(state){if(!state||typeof state.water!=='string'||typeof state.flora!=='string')return false;
+   try{eco={water:base64ToBytes(state.water),flora:base64ToBytes(state.flora)};calculateEcoMetrics();lastEcoDay=Math.floor(simDay);return true}catch(e){console.warn('Ecosistema non ripristinato',e);return false}}
+ function setLayer(layer){if(!['terrain','flora','moisture','fertility'].includes(layer))return;
+   viewLayer=layer;const labels={terrain:'◉ Terreno',flora:'♣ Vegetazione',moisture:'◈ Umidità',fertility:'◇ Fertilità'};
+   $('layerCycle').textContent=labels[layer];$('layerLegend').hidden=layer==='terrain';
+   $('layerLegend').className='eco-legend '+layer;$('layerLegendTitle').textContent=labels[layer].replace(/^[^ ]+ /,'');
+   $('layerLegendNote').textContent=layer==='moisture'?'Secco · Umido':layer==='fertility'?'Povero · Fertile':'Scarsa · Abbondante';
+   document.querySelectorAll('[data-layer]').forEach(b=>{b.style.borderColor=b.dataset.layer===layer?'#bdf1c9':'#45616a';b.setAttribute('aria-pressed',String(b.dataset.layer===layer))});
+   paintTerrain();needsDraw=true;saveWorld();
+ }
+ function intervention(type){if(!eco)return;let count=0;
+   for(let i=0;i<N;i++){const t=world.tiles[i];if(!landTile(t))continue;
+     if(type==='rain'){eco.water[i]=Math.min(100,eco.water[i]+30);count++}
+     else if(type==='drought'){eco.water[i]=Math.max(0,eco.water[i]-42);count++}
+     else if(type==='sow'&&t.fert>=40&&eco.flora[i]<76){eco.flora[i]=Math.min(100,eco.flora[i]+26);count++}
+   }
+   calculateEcoMetrics();const label={rain:'Un grande temporale ha ricaricato le riserve d’acqua',drought:'Una siccità improvvisa ha prosciugato il suolo',sow:'La semina ha favorito la vegetazione'}[type];
+   logEvent(`${label} (${count.toLocaleString('it-IT')} celle).`);paintTerrain();if(hoverTile)refreshInspection();updateUI();saveWorld();toast('Esperimento applicato: '+label.toLowerCase()+'.');
+ }
+ function ecoTint(n,layer){const t=clamp(n/100,0,1);let a,b;if(layer==='flora'){a=[140,105,70];b=[31,134,85]}
+   else if(layer==='moisture'){a=[171,106,65];b=[32,91,154]}
+   else{a=[130,92,64];b=[35,127,91]}
+   return `rgb(${Math.round(lerp(a[0],b[0],t))},${Math.round(lerp(a[1],b[1],t))},${Math.round(lerp(a[2],b[2],t))})`}
  const palettes={spring:{deep:'#14333f',sea:'#225465',coast:'#467687',river:'#4b94a0',snow:'#b6c8be',mountain:'#747f79',highland:'#677f5b',forest:'#356950',dry:'#a99d6c',meadow:'#739d63'},summer:{deep:'#163540',sea:'#245766',coast:'#4d7988',river:'#4b9ba4',snow:'#bdc9be',mountain:'#797e76',highland:'#708158',forest:'#326948',dry:'#b7a368',meadow:'#829d58'},autumn:{deep:'#153541',sea:'#255665',coast:'#4b7285',river:'#5195a4',snow:'#b8c8c4',mountain:'#857d73',highland:'#927d50',forest:'#906b43',dry:'#a89971',meadow:'#a89b62'},winter:{deep:'#173440',sea:'#315a67',coast:'#66858c',river:'#6b9da6',snow:'#e0e3d7',mountain:'#a4aca3',highland:'#a9afa1',forest:'#6a8578',dry:'#a9a89c',meadow:'#aab6aa'}};
  const seasons=['Primavera','Estate','Autunno','Inverno'];
  function currentSeason(){return Math.floor(mod(Math.floor(simDay),120)/30)}
  function displayDate(){const whole=Math.floor(simDay),year=Math.floor(whole/120)+1,day=mod(whole,120)+1;return {year,day,whole,season:currentSeason()}}
  function paintTerrain(){if(!world)return;const palette=Object.values(palettes)[currentSeason()];offCtx.fillStyle='#153b47';offCtx.fillRect(0,0,MAP,MAP);
-   for(const t of world.tiles){const x=t.x*TILE,y=t.y*TILE;offCtx.fillStyle=color(palette[t.biome],Math.round((t.detail-.5)*17));offCtx.fillRect(x,y,TILE,TILE);
-     if(t.biome==='forest'&&t.detail>.50){offCtx.fillStyle=currentSeason()===2?'#b19055':'#254d3e';const o=(t.detail*5)|0;offCtx.fillRect(x+1+o%3,y+1+o%3,3,3);if(t.detail>.84){offCtx.fillStyle='#83b58a';offCtx.fillRect(x+2,y+1,1,1)}}
-     if(t.biome==='mountain'||t.biome==='snow'){if(t.detail>.47){offCtx.fillStyle=t.biome==='snow'?'#f0f2df':'#a3aca0';offCtx.beginPath();offCtx.moveTo(x+2,y+1);offCtx.lineTo(x+5,y+6);offCtx.lineTo(x,y+6);offCtx.fill()}}
+   for(const t of world.tiles){const x=t.x*TILE,y=t.y*TILE,i=t.y*SIZE+t.x,land=landTile(t);
+     const v=eco?eco.flora[i]:0,w=eco?eco.water[i]:0;
+     offCtx.fillStyle=land&&viewLayer!=='terrain'?ecoTint(viewLayer==='flora'?v:viewLayer==='moisture'?w:t.fert,viewLayer):color(palette[t.biome],Math.round((t.detail-.5)*17));offCtx.fillRect(x,y,TILE,TILE);
+     if(land&&viewLayer==='terrain'&&eco){if(t.biome==='meadow'||t.biome==='dry'||t.biome==='highland'){offCtx.fillStyle=`rgba(26,101,53,${(v/100*.32).toFixed(2)})`;offCtx.fillRect(x,y,TILE,TILE)}else if(t.biome==='forest'&&v<35){offCtx.fillStyle=`rgba(142,110,65,${((35-v)/35*.67).toFixed(2)})`;offCtx.fillRect(x,y,TILE,TILE)}}
+     if(viewLayer==='terrain'&&t.biome==='forest'&&t.detail>.50&&(!eco||v>30)){offCtx.fillStyle=currentSeason()===2?'#b19055':'#254d3e';const o=(t.detail*5)|0;offCtx.fillRect(x+1+o%3,y+1+o%3,3,3);if(t.detail>.84){offCtx.fillStyle='#83b58a';offCtx.fillRect(x+2,y+1,1,1)}}
+     if(viewLayer==='terrain'&&(t.biome==='mountain'||t.biome==='snow')){if(t.detail>.47){offCtx.fillStyle=t.biome==='snow'?'#f0f2df':'#a3aca0';offCtx.beginPath();offCtx.moveTo(x+2,y+1);offCtx.lineTo(x+5,y+6);offCtx.lineTo(x,y+6);offCtx.fill()}}
      if(t.biome==='sea'&&t.detail>.90){offCtx.fillStyle='#83aab23b';offCtx.fillRect(x+1,y+2,3,1)}
      if(t.biome==='coast'&&t.detail>.45){offCtx.fillStyle='#d1c99b';offCtx.fillRect(x+1,y+1,2,2)}
    }
@@ -124,28 +453,56 @@
    if(night>.001){ctx.fillStyle=`rgba(5,14,32,${night.toFixed(3)})`;ctx.fillRect(left,top,drawSize,drawSize)}
    if(weather.kind==='rain'){ctx.save();ctx.beginPath();ctx.rect(Math.max(0,left),Math.max(0,top),Math.min(screenW,drawSize),Math.min(screenH,drawSize));ctx.clip();ctx.strokeStyle='#b2d8db58';ctx.lineWidth=1;ctx.beginPath();const drift=ts*.07;for(let i=0;i<80;i++){const rx=mod(hash(i,15,seed)*screenW+drift*1.7,screenW),ry=mod(hash(i,29,seed)*screenH+drift*4,screenH);ctx.moveTo(rx,ry);ctx.lineTo(rx-4,ry+11)}ctx.stroke();ctx.restore()}
    if(hoverTile){const t=hoverTile;ctx.strokeStyle='#c3f6ce';ctx.lineWidth=2;ctx.strokeRect(left+t.x*TILE*sc,top+t.y*TILE*sc,TILE*sc,TILE*sc)}
+   drawCreatures(left,top,sc);
    // Restrained chartographic coordinate grid at high zoom.
    if(zoom>=3){ctx.save();ctx.strokeStyle='#b3d3bf18';ctx.lineWidth=.5;const every=8;ctx.beginPath();for(let i=0;i<=SIZE;i+=every){const z=left+i*TILE*sc;ctx.moveTo(z,top);ctx.lineTo(z,top+drawSize);const h=top+i*TILE*sc;ctx.moveTo(left,h);ctx.lineTo(left+drawSize,h)}ctx.stroke();ctx.restore()}
  }
- function weatherForDay(){const idx=Math.floor(simDay/3);const h=hash(idx,42,seed+414);return {id:idx,kind:h<.16?'rain':h<.31?'wind':h<.42?'cloud':'clear',name:h<.16?'Pioggia':h<.31?'Vento':h<.42?'Nuvoloso':'Sereno'}}
+ function weatherForDay(day=simDay){const idx=Math.floor(day/3);const h=hash(idx,42,seed+414);return {id:idx,kind:h<.16?'rain':h<.31?'wind':h<.42?'cloud':'clear',name:h<.16?'Pioggia':h<.31?'Vento':h<.42?'Nuvoloso':'Sereno'}}
  function temperature(){const seasonTerm=[3,10,1,-8][currentSeason()],time=Math.sin(Math.PI*2*mod(simDay,1)-Math.PI/2)*4;return Math.round(15+seasonTerm+time+(hash(Math.floor(simDay/3),9,seed)-.5)*4)}
  function dateLabel(){const d=displayDate();return `Anno ${String(d.year).padStart(2,'0')} · Giorno ${String(d.day).padStart(3,'0')}`}
  function phaseName(){const p=mod(simDay,1);return p<.20?'Notte':p<.35?'Alba':p<.68?'Giorno':p<.83?'Tramonto':'Notte'}
- function updateUI(){const d=displayDate();el.date.textContent=dateLabel();el.season.textContent=`${seasons[d.season]} · ${phaseName()}`;el.temp.innerHTML=`${temperature()} <small>°C</small>`;el.weather.textContent=weatherForDay().name;el.land.innerHTML=`${Math.round(world.stats.land/(SIZE*SIZE)*100)}% <small>terra</small>`;el.worldName.textContent=world.name;el.seedLabel.textContent=seed;el.liveStatus.textContent=paused?'Ⅱ IN PAUSA':'● SIMULAZIONE ATTIVA';el.pauseIcon.textContent=paused?'▶':'Ⅱ';el.pauseText.textContent=paused?'Riprendi':'Pausa';$('pName').textContent=world.name;$('pDays').textContent=d.whole;$('pLand').textContent=`${Math.round(world.stats.land/(SIZE*SIZE)*100)}%`;$('pForest').textContent=`${Math.round(world.stats.forest/(SIZE*SIZE)*100)}%`;for(const b of document.querySelectorAll('[data-speed]')){b.classList.toggle('active',Number(b.dataset.speed)===speed);b.setAttribute('aria-pressed',Number(b.dataset.speed)===speed?'true':'false')}}
+ function paintEvolutionChart(){const chart=$('geneChart'),records=life?.history||[];if(!chart)return;
+   const width=Math.max(150,Math.round(chart.getBoundingClientRect().width||300)),height=120,pixel=Math.min(window.devicePixelRatio||1,2);
+   if(chart.width!==Math.round(width*pixel)||chart.height!==Math.round(height*pixel)){chart.width=Math.round(width*pixel);chart.height=Math.round(height*pixel)}
+   const c=chart.getContext('2d');c.setTransform(pixel,0,0,pixel,0,0);c.clearRect(0,0,width,height);
+   c.strokeStyle='#31515a';c.lineWidth=1;for(let j=0;j<=3;j++){const y=12+j*30;c.beginPath();c.moveTo(30,y);c.lineTo(width-5,y);c.stroke()}
+   c.fillStyle='#96afa9';c.font='10px system-ui';c.fillText('130%',2,16);c.fillText('100%',2,74);c.fillText('70%',7,105);
+   if(records.length<2){c.fillStyle='#adc8bc';c.fillText('I dati appariranno con il tempo',Math.max(30,(width-190)/2),63);return}
+   const first=records[0].day,last=records[records.length-1].day,dx=Math.max(1,last-first),w=width-38;
+   for(const [key,stroke] of [['herb','#f4d89b'],['pred','#ee9e88']]){
+     c.strokeStyle=stroke;c.lineWidth=2;c.beginPath();let drawing=false;
+     for(const r of records){if(!Number.isFinite(r[key])){drawing=false;continue}
+       const x=30+(r.day-first)/dx*w,y=102-(clamp(r[key],.70,1.30)-.70)/.60*88;
+       if(!drawing)c.moveTo(x,y);else c.lineTo(x,y);drawing=true;
+     }c.stroke();
+   }
+ }
+ function setMutationRate(rate){if(![0,.10,.35].includes(rate))return;mutationRate=rate;
+   document.querySelectorAll('[data-mutation]').forEach(b=>{const active=Number(b.dataset.mutation)===mutationRate;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
+   saveWorld();
+ }
+ function updateUI(){const d=displayDate();el.date.textContent=dateLabel();el.season.textContent=`${seasons[d.season]} · ${phaseName()}`;el.temp.innerHTML=`${temperature()} <small>°C</small>`;el.weather.textContent=weatherForDay().name;el.land.innerHTML=`${Math.round(world.stats.land/(SIZE*SIZE)*100)}% <small>terra</small>`;el.worldName.textContent=world.name;el.seedLabel.textContent=seed;el.liveStatus.textContent=paused?'Ⅱ IN PAUSA':'● SIMULAZIONE ATTIVA';el.pauseIcon.textContent=paused?'▶':'Ⅱ';el.pauseText.textContent=paused?'Riprendi':'Pausa';$('pName').textContent=world.name;$('pDays').textContent=d.whole;$('pLand').textContent=`${Math.round(world.stats.land/(SIZE*SIZE)*100)}%`;$('pForest').textContent=`${Math.round(world.stats.forest/(SIZE*SIZE)*100)}%`;
+   const counts=lifeCounts();$('animalCount').textContent=`◌ ${counts.herb}  ·  ✦ ${counts.pred}`;$('lifeHerbs').textContent=counts.herb;$('lifePreds').textContent=counts.pred;$('lifeBirths').textContent=life?.births??0;$('lifeDeaths').textContent=life?.deaths??0;$('pSpecies').textContent=(counts.herb>0?1:0)+(counts.pred>0?1:0);
+   const genes=geneticMetrics();$('geneMaxGeneration').textContent=genes.gen;$('geneMutations').textContent=life?.mutations||0;$('geneGeneticLines').textContent=genes.lines;$('geneAvg').textContent=genes.total?Math.round(genes.avg*100)+'%':'—';
+   if(el.panel.classList.contains('open'))paintEvolutionChart();
+   $('ecoFlora').textContent=ecoMetrics.flora+'%';$('ecoWater').textContent=ecoMetrics.water+'%';$('ecoStress').textContent=ecoMetrics.stress+'%';$('ecoGreen').textContent=ecoMetrics.green+'%';for(const b of document.querySelectorAll('[data-speed]')){b.classList.toggle('active',Number(b.dataset.speed)===speed);b.setAttribute('aria-pressed',Number(b.dataset.speed)===speed?'true':'false')}}
  function logEvent(msg){log.unshift({date:dateLabel(),msg});log=log.slice(0,14);renderLog()}
  function renderLog(){el.eventLog.innerHTML='';for(const entry of log){const li=document.createElement('li'),time=document.createElement('time');time.textContent=entry.date;li.append(time,document.createTextNode(entry.msg));el.eventLog.append(li)}}
- function initWorld(newSeed,options={}){const v=Number(newSeed);if(!Number.isSafeInteger(v)||v<1||v>2147483646)throw Error('Il seme deve essere un numero tra 1 e 2.147.483.646.');world=generateTerrain(v);simDay=Number.isFinite(options.simDay)?clamp(options.simDay,0,1e7):.35;speed=[1,2,4,8].includes(options.speed)?options.speed:1;paused=!!options.paused;log=Array.isArray(options.log)?options.log.slice(0,14).filter(l=>typeof l.msg==='string'&&typeof l.date==='string').map(l=>({msg:l.msg.slice(0,160),date:l.date.slice(0,50)})):[];if(!log.length)logEvent(`Il mondo ${world.name} è nato. Gli oceani e le montagne hanno preso forma.`);lastWeatherId=weatherForDay().id;paintTerrain();center();hoverTile=null;el.inspect.classList.remove('open');el.hint.classList.remove('hide');el.seedInput.value=seed;updateUI();renderLog();saveWorld();needsDraw=true}
- function worldData(){return {format:'project-genesis-v1',version:1,seed,simDay,speed,paused,log,created:new Date().toISOString()}}
+ function initWorld(newSeed,options={}){const v=Number(newSeed);if(!Number.isSafeInteger(v)||v<1||v>2147483646)throw Error('Il seme deve essere un numero tra 1 e 2.147.483.646.');world=generateTerrain(v);simDay=Number.isFinite(options.simDay)?clamp(options.simDay,0,1e7):.35;speed=[1,2,4,8,16,32].includes(options.speed)?options.speed:1;paused=!!options.paused;initEcology();if(['project-genesis-v2','project-genesis-v3','project-genesis-v4'].includes(options.format))restoreEcology(options.ecosystem);populateInitialLife();if(['project-genesis-v3','project-genesis-v4'].includes(options.format)&&options.life){if(!restoreLife(options.life))logEvent('Salvataggio fauna non valido, avviata una nuova popolazione.')}mutationRate=[0,.10,.35].includes(options.mutationRate)?options.mutationRate:.10;selectedCreatureId=null;showCreatures=options.showCreatures!==false;log=Array.isArray(options.log)?options.log.slice(0,14).filter(l=>typeof l.msg==='string'&&typeof l.date==='string').map(l=>({msg:l.msg.slice(0,160),date:l.date.slice(0,50)})):[];if(!log.length)logEvent(`Il mondo ${world.name} è nato. Gli oceani e le montagne hanno preso forma.`);lastWeatherId=weatherForDay().id;viewLayer=['terrain','flora','moisture','fertility'].includes(options.layer)?options.layer:'terrain';setLayer(viewLayer);center();hoverTile=null;el.inspect.classList.remove('open');$('showLife').textContent=showCreatures?'◉ Creature visibili':'◎ Creature nascoste';$('showLife').setAttribute('aria-pressed',String(showCreatures));el.hint.classList.remove('hide');el.seedInput.value=seed;setMutationRate(mutationRate);updateUI();renderLog();saveWorld();needsDraw=true}
+ function worldData(){return {format:'project-genesis-v4',version:4,seed,simDay,speed,paused,layer:viewLayer,showCreatures,mutationRate,log,
+   ecosystem:{water:bytesToBase64(eco.water),flora:bytesToBase64(eco.flora)},
+   life:{nextId:life?.nextId||1,births:life?.births||0,deaths:life?.deaths||0,hunts:life?.hunts||0,mutations:life?.mutations||0,history:(life?.history||[]).slice(-160),
+   creatures:(life?.creatures||[]).map(({id,kind,x,y,px,py,age,energy,thirst,trait,genome,generation,parents,lineage,born,sex,lastBirth,lastHunt})=>({id,kind,x,y,px,py,age,energy,thirst,trait,genome,generation,parents,lineage,born,sex,lastBirth,lastHunt}))}}}
  function saveWorld(){try{localStorage.setItem(KEY,JSON.stringify(worldData()));return true}catch(e){toast('Salvataggio non disponibile: controlla lo spazio di Safari.');return false}}
- function loadWorld(){try{const raw=localStorage.getItem(KEY);if(raw){const x=JSON.parse(raw);if(x.format==='project-genesis-v1'&&Number.isSafeInteger(x.seed)&&x.seed>=1&&x.seed<=2147483646){initWorld(x.seed,x);return true}}}catch(e){console.warn('Salvataggio ignorato',e)}return false}
+ function loadWorld(){try{const raw=localStorage.getItem(KEY)||localStorage.getItem(PREV_KEY)||localStorage.getItem(OLD_KEY)||localStorage.getItem(FIRST_KEY);if(raw){const x=JSON.parse(raw);if(['project-genesis-v1','project-genesis-v2','project-genesis-v3','project-genesis-v4'].includes(x.format)&&Number.isSafeInteger(x.seed)&&x.seed>=1&&x.seed<=2147483646){initWorld(x.seed,x);return true}}}catch(e){console.warn('Salvataggio ignorato',e)}return false}
  function toast(message){const elToast=el.toast;clearTimeout(toastTimeout);elToast.textContent=message;elToast.classList.add('show');toastTimeout=setTimeout(()=>elToast.classList.remove('show'),3200)}
- function openPanel(){el.panel.classList.add('open');el.scrim.classList.add('open');el.panel.setAttribute('aria-hidden','false');updateUI()}
+ function openPanel(){el.panel.classList.add('open');el.scrim.classList.add('open');el.panel.setAttribute('aria-hidden','false');updateUI();paintEvolutionChart()}
  function closePanel(){el.panel.classList.remove('open');el.scrim.classList.remove('open');el.panel.setAttribute('aria-hidden','true')}
- function confirmNew(fn){confirmAction=fn;$('confirm').classList.add('open')}
+ function confirmNew(fn,title='Creare un nuovo mondo?',message='Il mondo attuale verrà sostituito. Esporta un backup se desideri conservarlo.'){confirmAction=fn;$('dialogTitle').textContent=title;$('dialogText').textContent=message;$('confirm').classList.add('open')}
  function hideConfirm(){$('confirm').classList.remove('open');confirmAction=null}
  function randSeed(){return 1+Math.floor(Math.random()*2000000000)}
  function tick(ts){if(!lastTs)lastTs=ts;const dt=Math.min((ts-lastTs)/1000,.12);lastTs=ts;
-   if(!paused){const oldSeason=currentSeason();simDay+=dt*speed/16;if(oldSeason!==currentSeason()){paintTerrain();logEvent(`È iniziata la stagione: ${seasons[currentSeason()].toLowerCase()}.`)}if(weatherForDay().id!==lastWeatherId){lastWeatherId=weatherForDay().id;logEvent(`Il meteo cambia: ${weatherForDay().name.toLowerCase()}.`)}}
+   if(!paused){const oldSeason=currentSeason(),previousDay=Math.floor(simDay);simDay+=dt*speed/16;for(let d=previousDay+1;d<=Math.floor(simDay);d++){simulateEcoDay(d);simulateLifeDay(d)};if(Math.floor(simDay)!==previousDay){paintTerrain();if(hoverTile)refreshInspection()}if(oldSeason!==currentSeason()){paintTerrain();logEvent(`È iniziata la stagione: ${seasons[currentSeason()].toLowerCase()}.`)}if(weatherForDay().id!==lastWeatherId){lastWeatherId=weatherForDay().id;logEvent(`Il meteo cambia: ${weatherForDay().name.toLowerCase()}.`)}}
    if(ts-lastUI>700){updateUI();lastUI=ts}
    if(needsDraw||(!paused&&ts-lastDraw>75)){draw(ts);needsDraw=false;lastDraw=ts}
    anim=requestAnimationFrame(tick)
@@ -158,13 +515,25 @@
  canvas.addEventListener('pointerup',pointerEnd);canvas.addEventListener('pointercancel',pointerEnd);
  canvas.addEventListener('wheel',e=>{e.preventDefault();const p=pos(e);zoomAt(e.deltaY<0?1.13:1/1.13,p.x,p.y)},{passive:false});
  const titles={deep:'Oceano profondo',sea:'Mare aperto',coast:'Costa',river:'Fiume',snow:'Cime innevate',mountain:'Montagna',highland:'Altopiano',forest:'Foresta',dry:'Terreno arido',meadow:'Prateria'};
- function selectAt(p){const pt=screenToWorld(p.x,p.y),x=Math.floor(pt.x/TILE),y=Math.floor(pt.y/TILE);if(x<0||y<0||x>=SIZE||y>=SIZE){el.inspect.classList.remove('open');hoverTile=null;needsDraw=true;return}const t=world.tiles[y*SIZE+x];hoverTile=t;el.inspectName.textContent=titles[t.biome];el.inspectCoords.textContent=`Coordinate ${x}, ${y}`;el.inspectHeight.textContent=t.e<.425?`${Math.round((t.e-.425)*1800)} m`:`${Math.round((t.e-.425)*3900)} m`;el.inspectMoisture.textContent=`${Math.round(t.m*100)}%`;el.inspectFertility.textContent=`${t.fert}%`;el.inspect.classList.add('open');needsDraw=true}
+ function selectAt(p){const found=inspectCreatureAt(p.x,p.y);if(found){selectedCreatureId=found.id;hoverTile=world.tiles[found.y*SIZE+found.x];refreshInspection();el.inspect.classList.add('open');needsDraw=true;return}selectedCreatureId=null;const pt=screenToWorld(p.x,p.y),x=Math.floor(pt.x/TILE),y=Math.floor(pt.y/TILE);if(x<0||y<0||x>=SIZE||y>=SIZE){el.inspect.classList.remove('open');hoverTile=null;needsDraw=true;return}const t=world.tiles[y*SIZE+x];hoverTile=t;el.inspectName.textContent=titles[t.biome];el.inspectCoords.textContent=`Coordinate ${x}, ${y}`;el.inspectHeight.textContent=t.e<.425?`${Math.round((t.e-.425)*1800)} m`:`${Math.round((t.e-.425)*3900)} m`;el.inspectMoisture.textContent=`${Math.round(t.m*100)}%`;el.inspectFertility.textContent=`${t.fert}%`;refreshInspection();el.inspect.classList.add('open');needsDraw=true}
+ function refreshInspection(){if(!hoverTile||!eco)return;const creature=life?.creatures.find(a=>a.id===selectedCreatureId);$('creatureInspect').hidden=!creature;$('tileInspect').hidden=!!creature;if(creature){el.inspectName.textContent=creature.kind==='herb'?`◌ ${animalName(creature.id)} · Erbivoro`:`✦ ${animalName(creature.id)} · Predatore`;el.inspectCoords.textContent=`Coordinate ${creature.x}, ${creature.y} · ${creature.sex==='F'?'Femmina':'Maschio'}`;$('creatureAge').textContent=Math.floor(creature.age)+' giorni';$('creatureEnergy').textContent=Math.round(creature.energy)+'%';$('creatureThirst').textContent=Math.round(creature.thirst)+'%';$('creatureBehavior').textContent='Comportamento: '+creature.behavior;$('creatureTraits').textContent=`Generazione ${creature.generation||1} · ID #${creature.id}`;
+   const g=genomeOf(creature);$('genomeMini').innerHTML=GENES.map(k=>`<div class="gene-min"><div class="gline"><span>${GENE_LABELS[k]}</span><b>${Math.round(g[k]*100)}%</b></div><div class="gene-track"><b style="width:${Math.round((g[k]-.70)/.60*100)}%"></b></div></div>`).join('');
+   $('creatureLineage').textContent=`Stirpe #${creature.lineage||creature.id} · Genitori: ${creature.parents?.length?creature.parents.map(id=>'#'+id).join(', '):'fondatore'}`;return}selectedCreatureId=null;const t=hoverTile,i=t.y*SIZE+t.x;
+   const w=eco.water[i],f=eco.flora[i],land=landTile(t);$('inspectWater').textContent=land?w+'%':'—';$('inspectFlora').textContent=land?f+'%':'—';
+   $('inspectStatus').textContent=!land?'Acqua / roccia':w<25?'Arido':f>65?'Rigoglioso':f>25?'In crescita':'Spoglio';
+ }
  function exportJSON(){const text=JSON.stringify(worldData(),null,2),blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`genesis-${world.name.toLowerCase()}-${seed}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);toast('Backup preparato. Salvalo nell’app File.');}
  function setup(){if(!loadWorld())initWorld(randSeed());resize();requestAnimationFrame(tick);setInterval(()=>{if(world&&!document.hidden)saveWorld()},20000);window.addEventListener('pagehide',saveWorld);document.addEventListener('visibilitychange',()=>{lastTs=0;if(document.hidden)saveWorld();else needsDraw=true});window.addEventListener('resize',resize);if(window.ResizeObserver)new ResizeObserver(resize).observe(mapWrap);
- $('openPanel').addEventListener('click',openPanel);$('closePanel').addEventListener('click',closePanel);el.scrim.addEventListener('click',closePanel);$('inspectClose').addEventListener('click',()=>{el.inspect.classList.remove('open');hoverTile=null;needsDraw=true});$('zoomPlus').addEventListener('click',()=>zoomAt(1.25));$('zoomMinus').addEventListener('click',()=>zoomAt(.8));$('centerView').addEventListener('click',center);
+ $('openPanel').addEventListener('click',openPanel);$('closePanel').addEventListener('click',closePanel);el.scrim.addEventListener('click',closePanel);$('inspectClose').addEventListener('click',()=>{el.inspect.classList.remove('open');selectedCreatureId=null;hoverTile=null;needsDraw=true});$('zoomPlus').addEventListener('click',()=>zoomAt(1.25));$('zoomMinus').addEventListener('click',()=>zoomAt(.8));$('centerView').addEventListener('click',center);
+   $('layerCycle').addEventListener('click',()=>setLayer(['terrain','flora','moisture','fertility'][( ['terrain','flora','moisture','fertility'].indexOf(viewLayer)+1)%4]));
+   document.querySelectorAll('[data-layer]').forEach(b=>b.addEventListener('click',()=>{setLayer(b.dataset.layer);toast('Livello: '+b.textContent.trim())}));
+   $('addHerb').addEventListener('click',()=>introduceLife('herb',12));$('addPred').addEventListener('click',()=>introduceLife('pred',3));$('focusLife').addEventListener('click',focusLife);$('showLife').addEventListener('click',()=>{showCreatures=!showCreatures;$('showLife').textContent=showCreatures?'◉ Creature visibili':'◎ Creature nascoste';$('showLife').setAttribute('aria-pressed',String(showCreatures));needsDraw=true;saveWorld()});
+   document.querySelectorAll('[data-mutation]').forEach(b=>b.addEventListener('click',()=>{setMutationRate(Number(b.dataset.mutation));toast('Mutazioni: '+b.textContent.trim())}));
+   $('rainNow').addEventListener('click',()=>intervention('rain'));$('droughtNow').addEventListener('click',()=>intervention('drought'));$('sowNow').addEventListener('click',()=>intervention('sow'));
+   $('resetEco').addEventListener('click',()=>confirmNew(()=>{initEcology();logEvent('L’ecosistema è stato ripristinato alle condizioni iniziali.');paintTerrain();if(hoverTile)refreshInspection();updateUI();saveWorld();toast('Ecosistema ripristinato.')},'Ripristinare l’ecosistema?','Acqua e vegetazione torneranno alle condizioni iniziali. Il territorio, il giorno e il seme non cambieranno. Esporta un backup se vuoi conservare gli esperimenti.'));
  el.pause.addEventListener('click',()=>{paused=!paused;updateUI();saveWorld()});document.querySelectorAll('[data-speed]').forEach(b=>b.addEventListener('click',()=>{speed=Number(b.dataset.speed);paused=false;updateUI();saveWorld()}));
  $('newWorld').addEventListener('click',()=>confirmNew(()=>{initWorld(randSeed());toast('Un nuovo mondo è nato!')}));$('randomSeed').addEventListener('click',()=>{el.seedInput.value=randSeed();toast('Seme casuale pronto. Premi Genera.')});$('generateSeed').addEventListener('click',()=>{const s=Number(el.seedInput.value);if(!Number.isSafeInteger(s)||s<1||s>2147483646){toast('Inserisci un seme valido (1–2147483646).');return}confirmNew(()=>{initWorld(s);closePanel();toast('Mondo generato dal seme '+s)})});
- $('cancelNew').addEventListener('click',hideConfirm);$('acceptNew').addEventListener('click',()=>{const action=confirmAction;hideConfirm();if(action)action()});$('saveNow').addEventListener('click',()=>{saveWorld();toast('Mondo salvato sul dispositivo.')});$('exportSave').addEventListener('click',exportJSON);$('importSave').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>100000)throw Error('Il backup è troppo grande.');const data=JSON.parse(await file.text());if(data.format!=='project-genesis-v1'||!Number.isSafeInteger(data.seed)||data.seed<1||data.seed>2147483646||!Number.isFinite(data.simDay)||data.simDay<0)throw Error('File non compatibile con Genesis 0.1.');confirmNew(()=>{initWorld(data.seed,data);closePanel();toast('Backup ripristinato correttamente.')})}catch(err){toast(err.message||'Backup non valido.')}e.target.value=''});
+ $('cancelNew').addEventListener('click',hideConfirm);$('acceptNew').addEventListener('click',()=>{const action=confirmAction;hideConfirm();if(action)action()});$('saveNow').addEventListener('click',()=>{saveWorld();toast('Mondo salvato sul dispositivo.')});$('exportSave').addEventListener('click',exportJSON);$('importSave').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>700000)throw Error('Il backup è troppo grande.');const data=JSON.parse(await file.text());if(!['project-genesis-v1','project-genesis-v2','project-genesis-v3','project-genesis-v4'].includes(data.format)||!Number.isSafeInteger(data.seed)||data.seed<1||data.seed>2147483646||!Number.isFinite(data.simDay)||data.simDay<0)throw Error('Backup non compatibile con Genesis 0.4.');confirmNew(()=>{initWorld(data.seed,data);closePanel();toast('Backup ripristinato correttamente.')})}catch(err){toast(err.message||'Backup non valido.')}e.target.value=''});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){hideConfirm();closePanel()}else if(e.code==='Space'&&e.target.tagName!=='INPUT'){e.preventDefault();paused=!paused;updateUI()}});
  if('serviceWorker'in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
  }
