@@ -1,7 +1,7 @@
 {
-  "name": "Project Genesis — L’Evoluzione",
+  "name": "Project Genesis 0.8 — L’Età delle Civiltà",
   "short_name": "GENESIS",
-  "description": "Simulatore di mondi viventi, ecosistemi e selezione naturale. Funziona offline.",
+  "description": "Costruisci città e segui personaggi ed eventi storici in un ecosistema vivente.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

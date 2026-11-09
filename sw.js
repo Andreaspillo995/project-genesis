@@ -1,5 +1,5 @@
-// Project Genesis 0.4 — local first and safe update strategy.
-const CACHE='project-genesis-v04-assets';
+// Project Genesis 0.8 — local first and safe update strategy.
+const CACHE='project-genesis-v08-assets';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg','./icon-180.png','./guida.html'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('project-genesis-')&&k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()])));
